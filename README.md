@@ -214,7 +214,7 @@ This file will have the genotypes of all samples in the locus, and will be used 
 -cohortA_data_file  and cohortA_snps_file 
 list all data and snps files from the cohorts that will be meta analyzed together. The script expects cohort_number_int data files and cohort_number_int snps files
 
-###5) Run regressions
+### 5) Run regressions
 - For each locus-cohort-secondary phenotype, run the “RunRegressions.py” script:
 This script will obtain summary statistics for each locus. It will generate permutation files with estimated effect sizes (betas_files) and estimated variances (vars_files), as well as individual summary statistics files (assoc_files)
 
@@ -243,7 +243,7 @@ The chromosome number
 -cohort_number_int
 The number of cohorts that will be meta-analyzed together
 
-###6) Meta analyze
+### 6) Meta analyze
 -For each locus-secondary phenotype, when all of the cohort specific regressions have been finished, run “METAmergecohorts.py” to combine the cohort specific statistics into meta-analyzed files. These will include a summary statistic association file (meta.assoc_file) and a permutation file (meta.dump.all)
 
 ```
@@ -274,7 +274,7 @@ Make sure to include the appropriate path to where the files should be stored
 The beta and vars files generated from the Runregression.py script. Each beta file should proceed the var file from the same cohort. Pairs of beta and vars files from all cohorts that will be meta-analyzed should be provided.
 
 
-###7) Generate a config file
+### 7) Generate a config file
 After all the loci in the indexSNP file have been meta-analyzed, for each primary-secondary phenotype pair, run “jlim_gencfg.sh”
 Using the indexSNP file, jlim_gencfg.sh scans the provided secondary phenotype folder to generate a config file. 
 
@@ -306,5 +306,5 @@ run “run_jlim.sh”. This script runs JLIM in all loci in the config file, sto
 This is the r2 resolution limit. The default value is 0.8
 
 
-### Notes
+### Excluding samples
 If you need to exclude any samples, you should exclude them from the secondary phenotype file, or set their phenotype to “nan”. This file can only take quantitative values (or nan). The sample file should match the genotypes in the bimbam file exactly, so no samples can be excluded from this file.
